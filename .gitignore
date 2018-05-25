@@ -1,2 +1,12 @@
 
 Temp/
+
+*.mdb
+
+Library/
+
+\.vs/RoboBuggy3D/xs/UserPrefs\.xml
+
+*.ide-wal
+
+\.vs/RoboBuggy3D/xs/sqlite3/

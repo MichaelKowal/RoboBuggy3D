@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Player : MonoBehaviour 
 {
+	bool isJumping;
 	// Update is called once per frame
 	void Update ()
 	{
@@ -32,6 +33,6 @@ public class Player : MonoBehaviour
 		if(Input.GetAxis("Horizontal") != 0)
 		{
 			transform.Rotate(new Vector3(0, Input.GetAxis("Horizontal"), 0));
-		}
+		}     
 	}
 }

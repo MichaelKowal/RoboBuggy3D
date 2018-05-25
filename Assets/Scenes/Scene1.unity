@@ -217,22 +217,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 114733930267495220, guid: a47c855d913e24c1ab159a53ac8a8b66,
-        type: 2}
-      propertyPath: wall
-      value: 
-      objectReference: {fileID: 114736579804198556, guid: 8d407e181e761485ebcaf707c238b6e6,
-        type: 2}
-    - target: {fileID: 114733930267495220, guid: a47c855d913e24c1ab159a53ac8a8b66,
-        type: 2}
-      propertyPath: rows
-      value: 700
-      objectReference: {fileID: 0}
-    - target: {fileID: 114733930267495220, guid: a47c855d913e24c1ab159a53ac8a8b66,
-        type: 2}
-      propertyPath: columns
-      value: 700
-      objectReference: {fileID: 0}
     - target: {fileID: 114958293795793808, guid: a47c855d913e24c1ab159a53ac8a8b66,
         type: 2}
       propertyPath: startScreen
@@ -493,7 +477,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4941934056395396, guid: 8128689546c9a4302a78739f76b7a026, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 0.5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4941934056395396, guid: 8128689546c9a4302a78739f76b7a026, type: 2}
       propertyPath: m_LocalPosition.z
