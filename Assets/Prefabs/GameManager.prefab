@@ -55,7 +55,7 @@ MonoBehaviour:
   rows: 700
   columns: 700
   wall: {fileID: 114736579804198556, guid: 8d407e181e761485ebcaf707c238b6e6, type: 2}
-  largeWall: {fileID: 114753728086420802, guid: 2344d80c733b8447b8ec520f6b2ee452,
+  largeWall: {fileID: 114405888551966996, guid: 0a59afa458083475b92ef13f7d30233d,
     type: 2}
   hugeWall: {fileID: 114405888551966996, guid: 0a59afa458083475b92ef13f7d30233d, type: 2}
 --- !u!114 &114958293795793808
