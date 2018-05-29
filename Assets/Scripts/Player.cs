@@ -12,24 +12,24 @@ public class Player : MonoBehaviour
 	{
 		RaycastHit hit;
         //move forward
-		if(Input.GetKey("w") && !Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, 1))
+		if(Input.GetKey("w") && !Physics.Raycast(transform.position, transform.TransformDirection(new Vector3(0, 0, 0.25f)), out hit, 0.15f))
 		{
-			transform.Translate(Vector3.forward * Time.smoothDeltaTime * speed);
+			transform.Translate(new Vector3(0, 0, 0.25f) * Time.smoothDeltaTime * speed);
 		}
         //move left
-		if (Input.GetKey("a") && !Physics.Raycast(transform.position, transform.TransformDirection(Vector3.left), out hit, 1))
+		if (Input.GetKey("a") && !Physics.Raycast(transform.position, transform.TransformDirection(new Vector3(-0.25f, 0, 0)), out hit, 0.15f))
         {
-			transform.Translate(Vector3.left * Time.smoothDeltaTime * speed);
+			transform.Translate(new Vector3(-0.25f, 0, 0) * Time.smoothDeltaTime * speed);
         }
         //move back
-		if (Input.GetKey("s") && !Physics.Raycast(transform.position, transform.TransformDirection(Vector3.back), out hit, 1))
+		if (Input.GetKey("s") && !Physics.Raycast(transform.position, transform.TransformDirection(new Vector3(0, 0, -0.25f)), out hit, 0.15f))
         {
-			transform.Translate(Vector3.back * Time.smoothDeltaTime * speed);
+			transform.Translate(new Vector3(0, 0, -0.25f) * Time.smoothDeltaTime * speed);
         }
         //move right
-		if (Input.GetKey("d") && !Physics.Raycast(transform.position, transform.TransformDirection(Vector3.right), out hit, 1))
+		if (Input.GetKey("d") && !Physics.Raycast(transform.position, transform.TransformDirection(new Vector3(0.25f, 0, 0)), out hit, 0.15f))
         {
-			transform.Translate(Vector3.right * Time.smoothDeltaTime * speed);
+			transform.Translate(new Vector3(0.25f, 0, 0) * Time.smoothDeltaTime * speed);
         }
         //rotate view with mouse
 		if(Input.GetAxis("Horizontal") != 0)

@@ -87,7 +87,9 @@ public class MazeGenerator : MonoBehaviour
                 }
 
             }
-        }
+		}
+		Destroy(transform.GetChild(1).gameObject);
+		Destroy(transform.GetChild(transform.childCount - 2).gameObject);
     }
 
     public int[,] CreateMaze()
