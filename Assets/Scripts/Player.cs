@@ -10,11 +10,11 @@ public class Player : MonoBehaviour
 	int speed = 10;
 	int sprint = 100;
 	bool exhausted = false;
-	GameObject sprintText;
+	GameObject sprintBar;
 
 	private void Start()
 	{
-		sprintText = GameObject.Find("SprintText");
+		sprintBar = GameObject.Find("SprintBar");
 	}
 
 	// Update is called once per frame
@@ -58,6 +58,6 @@ public class Player : MonoBehaviour
 		{
 			transform.Rotate(new Vector3(0, Input.GetAxis("Horizontal"), 0));
 		}
-		sprintText.GetComponent<Text>().text = sprint.ToString();
+		sprintBar.GetComponent<RectTransform>().sizeDelta = new Vector2(sprint * 10, 50);
 	}
 }
