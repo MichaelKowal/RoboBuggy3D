@@ -9,12 +9,15 @@ public class Player : MonoBehaviour
 	int baseSpeed = 10;
 	int speed = 10;
 	int sprint = 100;
+	int power = 0;
 	bool exhausted = false;
 	GameObject sprintBar;
+	GameObject powerBar;
 
 	private void Start()
 	{
 		sprintBar = GameObject.Find("SprintBar");
+		powerBar = GameObject.Find("PowerBar");
 	}
 
 	// Update is called once per frame
@@ -25,11 +28,20 @@ public class Player : MonoBehaviour
 		{
 			speed *= 3;
 			sprint -= 2;
+			sprintBar.GetComponent<RectTransform>().position = new Vector3(sprintBar.GetComponent<RectTransform>().position.x,
+                                                                       sprintBar.GetComponent<RectTransform>().position.y - 4,
+                                                                       sprintBar.GetComponent<RectTransform>().position.z);
 		}
 		else if (sprint == 0 && !exhausted)
 			exhausted = true;
 		else if (sprint < 100)
+		{
 			sprint += 1;
+			sprintBar.GetComponent<RectTransform>().position = new Vector3(sprintBar.GetComponent<RectTransform>().position.x,
+                                                                       sprintBar.GetComponent<RectTransform>().position.y + 2,
+                                                                       sprintBar.GetComponent<RectTransform>().position.z); 
+		}
+			
 		else if (sprint == 100 && exhausted)
 			exhausted = false;
 		RaycastHit hit;
@@ -58,6 +70,30 @@ public class Player : MonoBehaviour
 		{
 			transform.Rotate(new Vector3(0, Input.GetAxis("Horizontal"), 0));
 		}
-		sprintBar.GetComponent<RectTransform>().sizeDelta = new Vector2(sprint * 10, 50);
+		sprintBar.GetComponent<RectTransform>().sizeDelta = new Vector2(30, sprint * 4);
+		if(Input.GetMouseButtonDown(0) && power == 100)
+		{
+			power = 1;
+			powerBar.GetComponent<RectTransform>().position = new Vector3(powerBar.GetComponent<RectTransform>().position.x,
+                                                                       -1000, powerBar.GetComponent<RectTransform>().position.z);
+			if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, 10))
+			{
+				Destroy(hit.transform.gameObject, 1);
+            }
+		}
+  	}
+
+	private void FixedUpdate()
+	{
+		if (power < 100)
+		{
+			power += 2;
+			powerBar.GetComponent<RectTransform>().sizeDelta = new Vector2(30, power * 4);
+			powerBar.GetComponent<RectTransform>().position = new Vector3(powerBar.GetComponent<RectTransform>().position.x,
+																	   powerBar.GetComponent<RectTransform>().position.y + 4,
+																	   powerBar.GetComponent<RectTransform>().position.z);
+		}
 	}
 }
+
+
