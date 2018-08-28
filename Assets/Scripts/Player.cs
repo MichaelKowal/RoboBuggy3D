@@ -74,8 +74,6 @@ public class Player : MonoBehaviour
 		if(Input.GetMouseButtonDown(0) && power == 100)
 		{
 			power = 1;
-			powerBar.GetComponent<RectTransform>().position = new Vector3(powerBar.GetComponent<RectTransform>().position.x,
-                                                                       -1000, powerBar.GetComponent<RectTransform>().position.z);
 			if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, 10))
 			{
 				Destroy(hit.transform.gameObject, 1);
@@ -89,9 +87,6 @@ public class Player : MonoBehaviour
 		{
 			power += 2;
 			powerBar.GetComponent<RectTransform>().sizeDelta = new Vector2(30, power * 4);
-			powerBar.GetComponent<RectTransform>().position = new Vector3(powerBar.GetComponent<RectTransform>().position.x,
-																	   powerBar.GetComponent<RectTransform>().position.y + 4,
-																	   powerBar.GetComponent<RectTransform>().position.z);
 		}
 	}
 }
